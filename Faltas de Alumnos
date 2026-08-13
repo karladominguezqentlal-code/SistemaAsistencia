@@ -1,0 +1,62 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class CalcularFaltas {
+
+    public static void calcularFaltas(String rutaArchivo) {
+        try {
+            // Leer todo el contenido del archivo
+            String contenido = new String(Files.readAllBytes(Paths.get(rutaArchivo)));
+
+            // Patrón para extraer el estado entre paréntesis: "Nombre: (P)" o similar
+            Pattern pattern = Pattern.compile("^[^=]+\\s*:[^=]*\\(([^\\)]+)\\)");
+            Matcher matcher = pattern.matcher(contenido);
+
+            int totalAlumnos = 0;
+            int presentes = 0;
+            int retardos = 0;
+            int faltas = 0;
+
+            // Recorrer todas las coincidencias
+            while (matcher.find()) {
+                String estado = matcher.group(1).toUpperCase();
+                totalAlumnos++;
+
+                if (estado.equals("P")) {
+                    presentes++;
+                } else if (estado.equals("R")) {
+                    retardos++;
+                } else {
+                    faltas++;  // Cualquier otro código (ej. "A", "F", etc.) se considera falta
+                }
+            }
+
+            // Si no hay registros, mostrar mensaje y salir
+            if (totalAlumnos == 0) {
+                System.out.println("No se encontraron registros en " + rutaArchivo);
+                return;
+            }
+
+            // Calcular porcentaje de faltas
+            double pctFaltas = ((double) faltas / totalAlumnos) * 100;
+
+            // Mostrar resultados
+            System.out.println("--- ALUMNOS CON FALTA ---");
+            System.out.println("Total de alumnos procesados: " + totalAlumnos);
+            System.out.printf("Alumnos con falta: %d (%.2f%%)\n", faltas, pctFaltas);
+            System.out.println("Presentes (P): " + presentes);
+            System.out.println("Retardos (R): " + retardos);
+
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        // Cambia la ruta por la de tu archivo de registros
+        calcularFaltas("registros.txt");
+    }
+}
