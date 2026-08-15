@@ -1,0 +1,124 @@
+{
+  "alumnos": [
+    {
+      "nombre": "Juan García",
+      "estado": "P"
+    },
+    {
+      "nombre": "María López",
+      "estado": "F"
+    },
+    {
+      "nombre": "Carlos Hernández",
+      "estado": "R"
+    },
+    {
+      "nombre": "Ana Martínez",
+      "estado": "P"
+    },
+    {
+      "nombre": "Luis González",
+      "estado": "P"
+    },
+    {
+      "nombre": "Sofía Pérez",
+      "estado": "F"
+    },
+    {
+      "nombre": "Miguel Rodríguez",
+      "estado": "R"
+    },
+    {
+      "nombre": "Valeria Sánchez",
+      "estado": "P"
+    },
+    {
+      "nombre": "Diego Ramírez",
+      "estado": "P"
+    },
+    {
+      "nombre": "Fernanda Torres",
+      "estado": "F"
+    },
+    {
+      "nombre": "José Flores",
+      "estado": "R"
+    },
+    {
+      "nombre": "Daniela Rivera",
+      "estado": "P"
+    },
+    {
+      "nombre": "Alejandro Gómez",
+      "estado": "P"
+    },
+    {
+      "nombre": "Camila Díaz",
+      "estado": "R"
+    },
+    {
+      "nombre": "Jorge Vargas",
+      "estado": "F"
+    },
+    {
+      "nombre": "Natalia Castillo",
+      "estado": "P"
+    },
+    {
+      "nombre": "Ricardo Morales",
+      "estado": "P"
+    },
+    {
+      "nombre": "Paola Ortiz",
+      "estado": "F"
+    },
+    {
+      "nombre": "Andrés Mendoza",
+      "estado": "R"
+    },
+    {
+      "nombre": "Gabriela Cruz",
+      "estado": "P"
+    },
+    {
+      "nombre": "Fernando Reyes",
+      "estado": "P"
+    },
+    {
+      "nombre": "Laura Navarro",
+      "estado": "F"
+    },
+    {
+      "nombre": "Eduardo Jiménez",
+      "estado": "R"
+    },
+    {
+      "nombre": "Regina Ruiz",
+      "estado": "P"
+    },
+    {
+      "nombre": "Sergio Herrera",
+      "estado": "P"
+    },
+    {
+      "nombre": "Andrea Medina",
+      "estado": "F"
+    },
+    {
+      "nombre": "Roberto Aguilar",
+      "estado": "P"
+    },
+    {
+      "nombre": "Ximena Vega",
+      "estado": "R"
+    },
+    {
+      "nombre": "Emiliano Ramos",
+      "estado": "P"
+    },
+    {
+      "nombre": "Renata Silva",
+      "estado": "F"
+    }
+  ]
+}
