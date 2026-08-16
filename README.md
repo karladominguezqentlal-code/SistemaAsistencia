@@ -1,6 +1,12 @@
 # Sistema de Asistencia
 
 Programa de consola en Java para consultar la asistencia de 20 alumnos.
+##Integrantes
+
+- Jose Luis Navarrete Martinez
+- Campos Jasso Geovanna
+- Karla Patricia Dominguez Ramirez
+- Adrian Vega B.
 
 Cada alumno tiene uno de estos estados:
 
