@@ -1,141 +1,75 @@
-package com.asistencia;
-
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
 import java.util.Scanner;
 
-public class SistemaDeAsistenciaG {
-
+public class Main {
     public static void main(String[] args) {
-
         Scanner teclado = new Scanner(System.in);
-
         int opcion;
 
         do {
+            limpiarPantalla();
+            System.out.println("\n--- CONTROL DE ASISTENCIA ---");
+            System.out.println("1. Numero de faltas");
+            System.out.println("2. Numero de retardos");
+            System.out.println("3. Porcentaje de asistencia");
+            System.out.println("4. Lista de alumnos con falta");
+            System.out.println("5. Salir");
+            System.out.print("Selecciona una opcion: ");
 
-            System.out.println();
-            System.out.println("======================================");
-            System.out.println("       SISTEMA DE ASISTENCIA");
-            System.out.println("======================================");
-            System.out.println("1. Seleccionar archivo JSON");
-            System.out.println("2. Porcentaje de asistencia");
-            System.out.println("3. Número de faltas");
-            System.out.println("4. Número de retardos");
-            System.out.println("5. Alumnos con falta");
-            System.out.println("6. Salir");
-            System.out.println("======================================");
-
-            System.out.print("Seleccione una opción: ");
-
+            while (!teclado.hasNextInt()) {
+                System.out.print("Ingresa un numero del 1 al 5: ");
+                teclado.next();
+            }
             opcion = teclado.nextInt();
 
             switch (opcion) {
-
                 case 1:
-
-                    seleccionarArchivo();
-
+                    limpiarPantalla();
+                    NumeroFaltas.mostrar();
                     break;
-
                 case 2:
-
-                    System.out.println(
-                            "Porcentaje de asistencia"
-                    );
-
+                    limpiarPantalla();
+                    NumeroRetardos.mostrar();
                     break;
-
                 case 3:
-
-                    System.out.println(
-                            "Numero de faltas"
-                    );
-
+                    limpiarPantalla();
+                    PorcentajeAsistencia.mostrar();
                     break;
-
                 case 4:
-
-                    System.out.println(
-                            "Numero de retardos"
-                    );
-
+                    limpiarPantalla();
+                    AlumnosFaltas.mostrar();
                     break;
-
                 case 5:
-
-                    System.out.println(
-                            "Numero de Alumnos con falta"
-                    );
-
+                    System.out.println("Programa finalizado.");
                     break;
-
-                case 6:
-
-                    System.out.println(
-                            "¡Hasta luego Arturo Caballero!"
-                    );
-
-                    break;
-
                 default:
-
-                    System.out.println(
-                            "Opción no válida."
-                    );
+                    System.out.println("Opcion no valida.");
             }
 
-        } while (opcion != 6);
+            if (opcion != 5) {
+                esperarCincoSegundos();
+            }
+        } while (opcion != 5);
 
         teclado.close();
     }
 
+    public static void limpiarPantalla() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls")
+                    .inheritIO()
+                    .start()
+                    .waitFor();
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        }
+    }
 
-    public static void seleccionarArchivo() {
-
-        JFileChooser selector = new JFileChooser();
-
-        FileNameExtensionFilter filtro =
-                new FileNameExtensionFilter(
-                        "Archivos JSON (*.json)",
-                        "json"
-                );
-
-        selector.setFileFilter(filtro);
-
-        selector.setDialogTitle(
-                "Seleccionar archivo de asistencia"
-        );
-
-        int resultado =
-                selector.showOpenDialog(null);
-
-        if (resultado == JFileChooser.APPROVE_OPTION) {
-
-            File archivo =
-                    selector.getSelectedFile();
-
-            System.out.println();
-            System.out.println(
-                    "Archivo seleccionado:"
-            );
-
-            System.out.println(
-                    archivo.getAbsolutePath()
-            );
-
-            System.out.println();
-            System.out.println(
-                    "Archivo cargado correctamente."
-            );
-
-        } else {
-
-            System.out.println();
-            System.out.println(
-                    "No se seleccionó ningún archivo."
-            );
+    public static void esperarCincoSegundos() {
+        try {
+            System.out.println("\nRegresando al menu en 5 segundos...");
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }

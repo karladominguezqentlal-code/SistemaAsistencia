@@ -1,0 +1,22 @@
+[
+  {"nombre": "Ana", "estado": "P"},
+  {"nombre": "Luis", "estado": "F"},
+  {"nombre": "Sofia", "estado": "R"},
+  {"nombre": "Diego", "estado": "P"},
+  {"nombre": "Maria", "estado": "P"},
+  {"nombre": "Carlos", "estado": "F"},
+  {"nombre": "Elena", "estado": "P"},
+  {"nombre": "Jorge", "estado": "R"},
+  {"nombre": "Valeria", "estado": "P"},
+  {"nombre": "Pablo", "estado": "F"},
+  {"nombre": "Lucia", "estado": "P"},
+  {"nombre": "Miguel", "estado": "P"},
+  {"nombre": "Andrea", "estado": "R"},
+  {"nombre": "Raul", "estado": "F"},
+  {"nombre": "Camila", "estado": "P"},
+  {"nombre": "Hugo", "estado": "P"},
+  {"nombre": "Paula", "estado": "F"},
+  {"nombre": "Marco", "estado": "P"},
+  {"nombre": "Irene", "estado": "R"},
+  {"nombre": "Tomas", "estado": "P"}
+]
